@@ -1,44 +1,53 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Application {
-    public static void main(String[] args){
-        Object myObj = new Object();
-
-        MyClass myObj2 = new MyClass();
-        myObj2.add(4);
-        // System.out.println(myObj2.get(0));
-
-        System.out.println(myObj);
-        Animal a = new Animal();
-        System.out.println(a);
-        System.out.println("toString of MyClass "+ myObj2);
-
-        /* A - Inheritance
-         * 1 - Class can 'extend' other Classes
-         * 2 - Extending an Object will cause the class to inherit all behavior of the parent class
-         * 3 - All classes that don't extend a class will inherently extend the Object class
-         * 4 - the Object class contains methods like toString, equals, hashcode
+    public static void main(String[] args) {
+        Car myTruck = new Truck();
+        /*
+         * myTruck is a Truck, which inherits all of the behavior of Car
+         * including the move() method
          * 
-         * B- Polymorphism
-         * 5 - When extending an Object, we can potentially overwrite the behavior of the parent class.
-         *     eg, it's pretty common to overwrite the behavior of the Object class's toString and equals methods.
-         *     This is a type of polymorphism.
-         * 6 - Polymorphism can be divided into runtime/compile time polymorphism.
-         * 7 - Compile time polymorphism - method overloading, having methods with the same name, but different parameters.
-         * 8 - Runtime polymorphism - method overriding, having a child class overwrite the behavior of the parent (eg overwrtie toString)
+         * INHERITANCE
+         * 
+         * POLYMORPHISM
+         * 
+         * compile-time (method overloading), run-time (overriding)
+         * 
+         * ENCAPSULATION
+         * encapsulation has to do with the ability for an object to 'hide' its data
+         * access modifiers - public, protected, default, private
+         * public - accessible everywhere
+         * protected - accessible within package and subclasses
+         * default - accessfible within package
+         * private - accessible only within class
+         * Encapsulation contains everything in a single unit
+         * 
+         * Abstraction - avoiding complicated implementation details, referring to human-readable
+         * descriptions of code instead - 'simplification'
+         * multiple ways to achieve this - the best way is interfaces
          */
+        myTruck.move();
+        
+        List<Animal> animals = new ArrayList();
+        List<Animal> animals2 = new LinkedList();
+        Animal kitty = new Cat();
 
-         ArrayList myAL = new MyClass();
-
-         Object myO;
-
-         boolean bool = true;
-         if(bool){
-            myO = new ArrayList();
-         }else{
-            myO = new Scanner(System.in);
-         }
-
+        /**
+         * A class can only immediately extend one other class
+         * (multiple inheritance - we want to avoid conflicts when inheriting fields/methods)
+         * if we want to have an extremely useful class, we may have a class that implements multiple interfaces
+         * 'whats the difference between extends and inherits'
+         * 
+         * 
+         * 
+         * INHERITANCE
+         * POLYMORPHISM
+         * ENCAPSULATION
+         * ABSTRACTION
+         * 
+         * thursday - generics, interfaces
+         */
     }
 }
